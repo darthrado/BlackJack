@@ -1,0 +1,40 @@
+- Game Flow
+-- Game Start
+-- Load Shoe [repeat if minimum shoe length not met]
+-- Players enter the game [entering and leaving the game should be dynamic]
+-- Start Hand
+-- For each player - get [pre-hand] decisions [example bet, bet amount, side bets]
+-- Each player chooses an action.
+-- Deal cards
+-- For each player - get [pre-BJ-evaluate] decisions
+-- Each player chooses an action
+-- Evaluate for Black Jack
+-- For each player - get [first-post-deal] decisions [example split, double down]
+-- Each player chooses an action
+-- Execute player action
+-- Evaluate Board
+-- [Repeat this until all players are done with the hand]
+-- For each player - get [nth-post-deal] decisions [stand, hit, surrender]
+-- Each player chooses an action
+-- Execute player action
+-- Evaluate Board
+-- [When all players are done]
+-- Dealer reveals hand
+-- Dealer draws until [Rule] [Example Hard17 rule, Soft17 rule]
+-- Evaluate Remaining hands
+-- Resolve bets
+-- Go to Next Hand
+
+
+
+-- When querying for available player decisions, a game state should be passed,
+providing the needed info to determine the available options
+
+-- Player information should be: player-id, stack, hand[s]
+
+-- Consider option to save hand history
+
+-- Technically the dealer is also a player in the sense that they also have a hand. For now i won't make the player into abstraction tho
+
+-- Game Notifies all of its players of a state change and provides the new state that contains a list of possible user inputs for that state
+-- Each state has a condition that advances
